@@ -1,0 +1,9 @@
+.bg-contact {
+  background-image: url("../../assect/image/bg_memphis.png");
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  height: 100%;
+  background-color: #e8eae9;
+  
+}

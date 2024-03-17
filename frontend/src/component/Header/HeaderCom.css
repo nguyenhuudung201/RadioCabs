@@ -1,0 +1,20 @@
+.bg-img {
+  background-image: url("../../assect/image/background_header.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+  height: 400px;
+  width: 100%;
+  background-color: #002559;
+}
+.bg-services {
+  background-image: url("../../assect/image/bg_memphis_2.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+  height: 800px;
+  width: 100%;
+  background-color: #e8eae9;
+}

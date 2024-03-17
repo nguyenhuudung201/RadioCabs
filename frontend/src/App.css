@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+a {
+  color: #002559;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:hover {
+  color: #71b131;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.i-con {
+  color: #002559;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.i-con:hover {
+  color: #71b131;
 }
-
-.App-link {
-  color: #61dafb;
+.over-lay {
+  background-color: #002559;
 }
+h1 {
+  color: #71b131;
+}
+h4 {
+  color: #002559;
+}
+.silder {
+  background-image: url("./assect/image/bg_memphis_2.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+  height: 500px;
+  width: 100%;
+  position: relative;
+  background-color: #e8eae9;
+}
+.footer-slider{
+  background-image: url("./assect/image/adult-office-workers-shaking-hands-in-crowded-hall.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+  height: 500px;
+  width: 100%;
+  position: relative;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.home-slider{
+background-image: url("./assect/image/business-executives-shaking-hands-outdoor-in-front-of-office-building-.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+  height: 500px;
+  width: 100%;
+  position: relative;
 }

@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "Jo1EXx7Q8j8bDIHnEmn55LfUwExU/OutyQF0VAcXis0=",
+  "Source": "backend",
+  "BasePath": "_content/backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "backend\\wwwroot",
+      "Source": "backend",
+      "ContentRoot": "E:\\Radio Cabs\\backend\\backend\\wwwroot\\",
+      "BasePath": "_content/backend",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "E:\\Radio Cabs\\backend\\backend\\wwwroot\\images\\driver\\profile_driver_image_1710640534554.jpg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Radio Cabs\\backend\\backend\\wwwroot\\",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/driver/profile_driver_image_1710640534554.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\driver\\profile_driver_image_1710640534554.jpg"
+    },
+    {
+      "Identity": "E:\\Radio Cabs\\backend\\backend\\wwwroot\\images\\driver\\profile_driver_image_1710640612854.jpg",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Radio Cabs\\backend\\backend\\wwwroot\\",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/driver/profile_driver_image_1710640612854.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\driver\\profile_driver_image_1710640612854.jpg"
+    }
+  ]
+}
