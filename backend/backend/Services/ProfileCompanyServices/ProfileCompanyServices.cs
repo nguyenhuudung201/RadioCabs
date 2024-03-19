@@ -74,5 +74,19 @@ namespace backend.Services.ProfileCompanyServices
             });
             return profilesToReturn;
         }
+        public async Task<IEnumerable<ProfileCompanyGetAllDto>> GetAllProfileToClinet()
+        {
+            var profileList = await _radioCabsContext.ProfileCompanies.
+                AsNoTracking().
+                Include(p => p.Company).ToListAsync();
+            var profilesToReturn = profileList.Select(p => new ProfileCompanyGetAllDto
+            {
+                Id = p.Id,
+                Image = p.Image,
+                Name = p.Company!.CompanyName,
+                Description = p.Description
+            });
+            return profilesToReturn;
+        }
     }
 }

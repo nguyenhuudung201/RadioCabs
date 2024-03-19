@@ -30,9 +30,11 @@ namespace backend.Entities
         [ForeignKey(nameof(Member))]
         public required int MemberId { get; set; }
         public Member? Member { get; set; }
-      /*  [ForeignKey(nameof(Role))]
+
+        [ForeignKey(nameof(Roles))]
         public required int RoleId { get; set; }
-        public Role? Role { get; set; }*/
+        public Roles? Role { get; set; }
+
         public required string Salt { get; set; }
         public string? RefreshToken { get; set; }
         public DateTime RefreshTokenExpiryTime { get; set; }

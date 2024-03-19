@@ -54,5 +54,11 @@ namespace backend.Controllers
             var profilesToReturn = await _profileCompanycs.GetAllProfile(comapnyId);
             return Ok(profilesToReturn);
         }
+        [HttpGet("all/companies")]
+        public async Task<IActionResult> GetAllProfileToClient()
+        {
+            var profilesToReturn = await _profileCompanycs.GetAllProfileToClinet();
+            return Ok(profilesToReturn);
+        }
     }
 }

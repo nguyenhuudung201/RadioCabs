@@ -16,7 +16,6 @@ namespace backend.DatabaseContexts
         public required DbSet<Marital> Maritals { get; set; }
         public required DbSet<ProfileDriver> ProfileDrivers { get; set; }
         public required DbSet<ProfileCompany> ProfileCompanies { get; set; }
-        public required DbSet<Role> Roles { get; set; }
-
+        public required DbSet<Roles> Roles { get; set; }
     }
 }

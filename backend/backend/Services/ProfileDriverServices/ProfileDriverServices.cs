@@ -105,6 +105,20 @@ namespace backend.Services.ProfileDriverServices
                 Description = p.Driver!.Description
             });
             return profilesToReturn;
-        }   
+        }
+        public async Task<IEnumerable<ProflieDriverGetAllDto>> GetAllProfileToClient()
+        {
+            var profileList = await _radioCabsContext.ProfileDrivers.
+                AsNoTracking().
+                Include(p => p.Driver).ToListAsync();
+            var profilesToReturn = profileList.Select(p => new ProflieDriverGetAllDto
+            {
+                Id = p.Id,
+                Image = p.Image,
+                Name = p.Driver!.DriverName,
+                Description = p.Driver!.Description
+            });
+            return profilesToReturn;
+        }
     }
 }

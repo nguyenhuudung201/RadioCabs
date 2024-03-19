@@ -52,6 +52,13 @@ namespace backend.Controllers
             var profilesToReturn = await _profileDriverServices.GetAllProfile(userId);
             return Ok(profilesToReturn);
         }
+        [HttpGet("all/drivers")]
+        public async Task<IActionResult> GetAllProfileToClient()
+        {
+           
+            var profilesToReturn = await _profileDriverServices.GetAllProfileToClient();
+            return Ok(profilesToReturn);
+        }
         [Authorize]
         [HttpPut]
         public async Task<IActionResult> UpdateProfile([FromForm] ProfileDriverUpdateDto dto, [FromRoute] int profileId)

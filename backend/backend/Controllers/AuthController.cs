@@ -78,9 +78,9 @@ namespace backend.Controllers
                 Mobile = dtos.CompanyPhone,
                 Telephone = dtos.CompanyTelephone,
                 Fax = dtos.Fax,
-                Password = PasswordHelper.HashPassword(dtos.CompanyPassword,out salt),
+                Password = PasswordHelper.HashPassword(dtos.CompanyPassword, out salt),
                 MemberId = dtos.MemberId,
-               /* RoleId=2,*/
+                RoleId = 1,
                 Salt = salt,
             };
             _radioCabsContext.Companies.Add(companyToCreate);
@@ -112,7 +112,7 @@ namespace backend.Controllers
                 Password=PasswordHelper.HashPassword(dtos.Password,out salt),
                 Mobile=dtos.Mobile,
                 Telephone=dtos.Telephone,
-                /*RoleId=1,*/
+                RoleId=2,
                 Salt = salt,
             };
             _radioCabsContext.Drivers.Add(driverToCreate);
