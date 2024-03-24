@@ -1,6 +1,8 @@
 ﻿using System.Data.Common;
 using backend.Entities;
 using Microsoft.EntityFrameworkCore;
+using RadioCabsBackEnd.Entities;
+
 namespace backend.DatabaseContexts
 {
     public class RadioCabsContext : DbContext
@@ -17,5 +19,7 @@ namespace backend.DatabaseContexts
         public required DbSet<ProfileDriver> ProfileDrivers { get; set; }
         public required DbSet<ProfileCompany> ProfileCompanies { get; set; }
         public required DbSet<Roles> Roles { get; set; }
+        public required DbSet<Advertise> Advertises { get; set; }
+        public required DbSet<Admin> Admins { get; set; }
     }
 }

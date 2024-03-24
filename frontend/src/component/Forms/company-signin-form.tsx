@@ -1,30 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assect/image/Logo_careera.png";
-import axios from "axios";
-import { BackendUrl } from "../../api/backend-url";
+
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin } from "../../features/auth/authActions";
 const CompanySigninFrom = () => {
+  const dispatch = useDispatch<any>();
+
   const [inputData, setInputData] = useState({
-    email: "",
-    password: "",
+    Email: "",
+    Password: "",
   });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    inputData.email = inputData.email.toLowerCase();
-    axios
-      .post(`${BackendUrl}/auth/login/company`, inputData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => {
-        sessionStorage.setItem("accessToken", res.data.token);
-        sessionStorage.setItem("refreshToken", res.data.refreshToken);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(userLogin(inputData));
   };
+
   return (
     <section className="container-full flex items-center justify-center">
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8  ">
@@ -52,7 +43,7 @@ const CompanySigninFrom = () => {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={(e) =>
-                    setInputData({ ...inputData, email: e.target.value })
+                    setInputData({ ...inputData, Email: e.target.value })
                   }
                 />
               </div>
@@ -83,7 +74,7 @@ const CompanySigninFrom = () => {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={(e) =>
-                    setInputData({ ...inputData, password: e.target.value })
+                    setInputData({ ...inputData, Password: e.target.value })
                   }
                 />
               </div>

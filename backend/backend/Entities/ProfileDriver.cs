@@ -8,8 +8,8 @@ namespace backend.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [NotMapped]
-        public DateOnly? DateOfBirth { get; set; }
+    
+        public DateTime DateOfBirth { get; set; }
         [Required]
         [ForeignKey(nameof(Sex))]
         public required int SexId { get; set; }
@@ -24,5 +24,11 @@ namespace backend.Entities
         public Driver? Driver { get; set; }
         [Required]
         public required string Image { get; set; }
+        [Required]
+        public required string About { get; set; }
+        [Required]
+        public required string Education { get; set; }
+        [Required]
+        public required string Skill { get; set; }
     }
 }

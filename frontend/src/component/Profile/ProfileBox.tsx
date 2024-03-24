@@ -3,13 +3,13 @@ import { DriverProfile } from "../../model/DriverProfile";
 import { BackendUrlImage } from "../../api/backend-url";
 import { Link } from "react-router-dom";
 
-const ProfileBox = ({ id, name, image, description }: DriverProfile) => {
+const ProfileBox = ({ id, name, image, description, url }: DriverProfile) => {
   return (
     <div className="text-center ">
       <Link to={`/profile/detail/${id}`}>
         <img
-          src={`${BackendUrlImage}/${image}`}
-          className="mx-auto mb-4 w-32 rounded-lg"
+          src={`${BackendUrlImage}${image}`}
+          className="mx-auto h-[150px]  mb-4 w-32 rounded-lg"
           alt="Avatar"
         />
       </Link>
@@ -17,6 +17,7 @@ const ProfileBox = ({ id, name, image, description }: DriverProfile) => {
       <p className="text-neutral-500 dark:text-neutral-400">
         {description.slice(1, 20)}
       </p>
+      <Link to={`/profile/edit/${id}`}>Edit</Link>
     </div>
   );
 };

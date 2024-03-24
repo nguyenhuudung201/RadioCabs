@@ -3,27 +3,17 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BackendUrl } from "../../api/backend-url";
 import Logo from "../../assect/image/Logo_careera.png";
+import { useDispatch, useSelector } from "react-redux";
+import { userDriverLogin } from "../../features/auth/authActions";
 const DriverSigninForm = () => {
+  const dispatch = useDispatch<any>();
   const [inputData, setInputData] = useState({
-    email: "",
-    password: "",
+    Email: "",
+    Password: "",
   });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    inputData.email = inputData.email.toLowerCase();
-    axios
-      .post(`${BackendUrl}/auth/login/driver`, inputData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => {
-        sessionStorage.setItem("accessToken", res.data.token);
-        sessionStorage.setItem("refreshToken", res.data.refreshToken);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(userDriverLogin(inputData));
   };
   return (
     <section className="container-full flex items-center justify-center">
@@ -52,7 +42,7 @@ const DriverSigninForm = () => {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={(e) =>
-                    setInputData({ ...inputData, email: e.target.value })
+                    setInputData({ ...inputData, Email: e.target.value })
                   }
                 />
               </div>
@@ -83,7 +73,7 @@ const DriverSigninForm = () => {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={(e) =>
-                    setInputData({ ...inputData, password: e.target.value })
+                    setInputData({ ...inputData, Password: e.target.value })
                   }
                 />
               </div>

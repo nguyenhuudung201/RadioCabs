@@ -31,6 +31,10 @@ namespace backend.Services.ProfileDriverServices
                 DateOfBirth=dto.DateOfBirth,
                 Image = $"/images/driver/{fileName}",
                 DriverId=driverId,
+                About=dto.About,
+                Education=dto.Education,
+                Skill=dto.Skill
+                
             };
             _radioCabsContext.ProfileDrivers.Add(ProfileToCreate);
             await _radioCabsContext.SaveChangesAsync();
@@ -60,9 +64,12 @@ namespace backend.Services.ProfileDriverServices
                 SexId = profile.SexId,
                 Sex=profile.Sex!.Name,
                 Image = profile.Image,
+                About=profile.About,
                 MaritalId = profile.MaritalId,
                 Marital = profile.Marital!.Name,
                 DateOfBirth = profile.DateOfBirth,
+                Education=profile.Education,
+                Skill=profile.Skill,
 
             };
             return profileDriverToReturn;
@@ -70,10 +77,10 @@ namespace backend.Services.ProfileDriverServices
         public async Task UpdateProfile(ProfileDriverUpdateDto dto, int profileId)
         {
             var user = await _radioCabsContext.ProfileDrivers.FindAsync(profileId) ?? throw new ArgumentException(null, nameof(profileId));
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot{user.Image}");
-            System.IO.File.Delete(filePath);
+      /*      string filePath = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot/images/driver{user.Image}");
+            System.IO.File.Delete(filePath);*/
 
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/driver");
             FileInfo fileInfo = new FileInfo(dto.Image.FileName);
 
             string fileName = "profile_driver_image_" + DateTimeOffset.Now.ToUnixTimeMilliseconds().ToString() + fileInfo.Extension;
@@ -88,7 +95,9 @@ namespace backend.Services.ProfileDriverServices
             user.SexId = dto.SexId;
             user.DateOfBirth = dto.DateOfBirth;
             user.Image = $"/images/driver/{fileName}";
-
+            user.About = dto.About;
+            user.Education = dto.Education;
+            user.Skill = dto.Skill;
             await _radioCabsContext.SaveChangesAsync();
         }
         

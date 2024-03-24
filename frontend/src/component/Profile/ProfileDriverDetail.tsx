@@ -9,6 +9,9 @@ import { BackendUrl } from "../../api/backend-url";
 import { BackendUrlImage } from "../../api/backend-url";
 import { DriverProfileDetail } from "../../model/DriverProfile";
 import { FaPhoneAlt } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+import { IoIosContact } from "react-icons/io";
+import moment from "moment";
 const ProfileDriverDetail = () => {
   const [profile, setProfile] = useState<DriverProfileDetail>();
   const { id } = useParams();
@@ -17,14 +20,13 @@ const ProfileDriverDetail = () => {
       .get(`${BackendUrl}/ProfileDriver/${id}`, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + sessionStorage.getItem("accessToken"),
         },
       })
       .then((res) => setProfile(res.data))
       .catch((err) => console.error(err));
   }, []);
   return (
-    <section className="container flex  gap-4">
+    <section className="container-full flex  gap-4">
       <div className="w-full">
         <div className="bg-gray-100">
           <div className="container mx-auto py-8">
@@ -36,8 +38,17 @@ const ProfileDriverDetail = () => {
                       src={`${BackendUrlImage}/${profile?.image}`}
                       className="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0"
                     ></img>
-                    <h1 className="text-xl font-bold">{profile?.name}</h1>
+                    <h2 className="text-xl font-bold">{profile?.name}</h2>
                     <p className="text-gray-700">Driver</p>
+                    <div className="text-left">
+                      <p className="text-gray-700 flex items-center">
+                        <MdOutlineEmail />:{profile?.email}
+                      </p>
+
+                      <p className="text-gray-700 flex items-center">
+                        <IoIosContact />:{profile?.contactPerson}
+                      </p>
+                    </div>
                     <div className="mt-6 flex flex-wrap gap-4 justify-center">
                       <a
                         href="#"
@@ -63,7 +74,8 @@ const ProfileDriverDetail = () => {
                         <FaMarsAndVenus />:{profile?.sex}
                       </li>
                       <li className="mb-2 flex ">
-                        <FaCakeCandles />:{profile?.dateOfBirth}
+                        <FaCakeCandles />:
+                        {moment(profile?.dateOfBirth).format("DD/MM/YYYY")}
                       </li>
                       <li className="mb-2 flex ">
                         <FaPhoneAlt />:{profile?.phoneNumber}
@@ -81,8 +93,13 @@ const ProfileDriverDetail = () => {
               <div className="col-span-4 sm:col-span-9">
                 <div className="bg-white shadow rounded-lg p-6">
                   <h2 className="text-xl font-bold mb-4">About Me</h2>
+                  <p className="text-gray-700">{profile?.about}</p>
+                  <h2 className="text-xl font-bold my-4">Description</h2>
                   <p className="text-gray-700">{profile?.description}</p>
-
+                  <h2 className="text-xl font-bold my-4">Education</h2>
+                  <p className="text-gray-700">{profile?.education}</p>
+                  <h2 className="text-xl font-bold my-4">Skill</h2>
+                  <p className="text-gray-700">{profile?.skill}</p>
                   <h3 className="font-semibold text-center mt-3 -mb-2">
                     Find me on
                   </h3>
@@ -173,27 +190,6 @@ const ProfileDriverDetail = () => {
                       </svg>
                     </a>
                   </div>
-
-                  {/* <h2 className="text-xl font-bold mt-6 mb-4">Experience</h2>
-                  <div className="mb-6">
-                    <div className="flex justify-between flex-wrap gap-2 w-full">
-                      <span className="text-gray-700 font-bold">
-                        Web Developer
-                      </span>
-                      <p>
-                        <span className="text-gray-700 mr-2">
-                          at ABC Company
-                        </span>
-                        <span className="text-gray-700">2017 - 2019</span>
-                      </p>
-                    </div>
-                    <p className="mt-2">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed finibus est vitae tortor ullamcorper, ut vestibulum
-                      velit convallis. Aenean posuere risus non velit egestas
-                      suscipit.
-                    </p>
-                  </div> */}
                 </div>
               </div>
             </div>

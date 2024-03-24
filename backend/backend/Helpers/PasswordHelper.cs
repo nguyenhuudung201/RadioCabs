@@ -1,4 +1,5 @@
 ﻿using backend.Entities;
+using RadioCabsBackEnd.Entities;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -32,6 +33,12 @@ namespace backend.Helpers
             var passwordHashToCompare = Rfc2898DeriveBytes.Pbkdf2(Encoding.UTF8.GetBytes(password), Convert.FromHexString(driver.Salt!), _iterations, _hashAlgorithm, _keySize);
 
             return CryptographicOperations.FixedTimeEquals(passwordHashToCompare, Convert.FromHexString(driver.Password!));
+        }
+        public static bool VerifyPasswordAdmin(Admin admin, string password)
+        {
+            var passwordHashToCompare = Rfc2898DeriveBytes.Pbkdf2(Encoding.UTF8.GetBytes(password), Convert.FromHexString(admin.Salt!), _iterations, _hashAlgorithm, _keySize);
+
+            return CryptographicOperations.FixedTimeEquals(passwordHashToCompare, Convert.FromHexString(admin.Password!));
         }
     }
 }

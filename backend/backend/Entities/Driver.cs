@@ -31,7 +31,7 @@ namespace backend.Entities
         [ForeignKey(nameof(Roles))]
         public required int RoleId { get; set; }
         public Roles? Role { get; set; }
-
+       
 
         public required string Password { get; set; }
         public required string Salt { get; set; }

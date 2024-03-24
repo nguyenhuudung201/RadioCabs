@@ -15,6 +15,7 @@ export default function CompanyRegisterForm() {
     contactPerson: "",
     fax: "",
     memberId: "",
+    roleId: 1,
   });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

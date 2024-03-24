@@ -22,8 +22,8 @@ const ProfileDriver = () => {
   return (
     <>
       <h4 className="text-3xl font-bold">List Profile</h4>
-      <div className="container flex items-center gap-4">
-        <div>
+      <div className="container ">
+        <div className="grid grid-cols-4 gap-4">
           {profiles?.map((profile, i) => (
             <ProfileBox
               key={i}
@@ -31,6 +31,7 @@ const ProfileDriver = () => {
               image={profile.image}
               description={profile.description}
               id={profile.id}
+              url=""
             />
           ))}
         </div>

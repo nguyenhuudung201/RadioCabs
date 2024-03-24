@@ -3,6 +3,7 @@ using backend.DTOs.ProfileCompany;
 using backend.DTOs.ProfileDrive;
 using backend.Entities;
 using Microsoft.EntityFrameworkCore;
+using RadioCabsBackEnd.DTOs.ProfileCompany;
 
 namespace backend.Services.ProfileCompanyServices
 {
@@ -17,7 +18,7 @@ namespace backend.Services.ProfileCompanyServices
         {
             string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/companies");
             FileInfo fileInfo = new FileInfo(dto.Image.FileName);
-            string fileName = "comapny_driver_image_" + DateTimeOffset.Now.ToUnixTimeMilliseconds().ToString() + fileInfo.Extension;
+            string fileName = "comapny_company_image_" + DateTimeOffset.Now.ToUnixTimeMilliseconds().ToString() + fileInfo.Extension;
             string fileNameWithPath = Path.Combine(path, fileName);
 
             using (var stream = new FileStream(fileNameWithPath, FileMode.Create))
@@ -30,6 +31,8 @@ namespace backend.Services.ProfileCompanyServices
                 DateOfBirth = dto.DateOfBirth,
                 Image = $"/images/companies/{fileName}",
                 CompanyId = companyId,
+                About= dto.About,
+                Services = dto.Services
             };
             _radioCabsContext.ProfileCompanies.Add(ProfileToCreate);
             await _radioCabsContext.SaveChangesAsync();
@@ -56,7 +59,8 @@ namespace backend.Services.ProfileCompanyServices
                 Image=profile.Image,
                 Description=profile.Description,
                 DateOfBirth=profile.DateOfBirth,
-
+                About= profile.About,
+                Services = profile.Services
             };
             return profileCompanyToReturn;
         }
@@ -87,6 +91,28 @@ namespace backend.Services.ProfileCompanyServices
                 Description = p.Description
             });
             return profilesToReturn;
+        }
+        public async Task UpdateProfile(ProfileCompanyUpdateDto dto, int profileId)
+        {
+            var user = await _radioCabsContext.ProfileCompanies.FindAsync(profileId) ?? throw new ArgumentException(null, nameof(profileId));
+
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/companies");
+            FileInfo fileInfo = new FileInfo(dto.Image.FileName);
+
+            string fileName = "profile_company_image_" + DateTimeOffset.Now.ToUnixTimeMilliseconds().ToString() + fileInfo.Extension;
+            string fileNameWithPath = Path.Combine(path, fileName);
+
+            using (var stream = new FileStream(fileNameWithPath, FileMode.Create))
+            {
+                dto.Image.CopyTo(stream);
+            }
+
+            user.Description = dto.Description;
+            user.DateOfBirth = dto.DateOfBirth;
+            user.Image = $"/images/companies/{fileName}";
+            user.About = dto.About;
+            user.Services = dto.Services;
+            await _radioCabsContext.SaveChangesAsync();
         }
     }
 }

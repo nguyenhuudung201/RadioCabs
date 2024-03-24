@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeaderCom from "../Header/HeaderCom";
 import { CiSearch } from "react-icons/ci";
 import Box from "../Box/Box";
+import axios from "axios";
+import { BackendUrl } from "../../api/backend-url";
+import { DriverProfile } from "../../model/DriverProfile";
 
 const Company = () => {
+  const [profiles, setProfiles] = useState<DriverProfile[]>();
+  useEffect(() => {
+    axios
+      .get(`${BackendUrl}/ProfileCompany/all/companies`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => setProfiles(res.data))
+      .catch((err) => console.error(err));
+  }, []);
   return (
     <>
       <section className="container-full relative">
@@ -31,16 +45,17 @@ const Company = () => {
       </section>
       <section className="text-center container mb-[50px] mx-auto ">
         <h4 className=" text-4xl font-bold mb-[30px]">Popular Company</h4>
-        <div className="flex gap-4 ">
-          <div className="w-1/3 ">
-            <Box />
-          </div>
-          <div className="w-1/3 ">
-            <Box />
-          </div>
-          <div className="w-1/3 ">
-            <Box />
-          </div>
+        <div className="grid grid-cols-4 gap-4">
+          {profiles?.map((p, i) => (
+            <Box
+              key={i}
+              name={p.name}
+              image={p.image}
+              id={p.id}
+              description={p.description}
+              url="company"
+            />
+          ))}
         </div>
       </section>
     </>

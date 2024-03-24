@@ -7,6 +7,8 @@ const CompanyProfileForm = () => {
   const [inputData, setInputData] = useState({
     DateOfBirth: "",
     Description: "",
+    About: "",
+    Services: "",
   });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,6 +17,8 @@ const CompanyProfileForm = () => {
     formData.append("dateOfBirth", inputData.DateOfBirth);
     formData.append("description", inputData.Description);
     formData.append("image", file);
+    formData.append("about", inputData.About);
+    formData.append("services", inputData.Services);
     axios
       .post(`${BackendUrl}/ProfileCompany`, formData, {
         headers: {
@@ -76,6 +80,42 @@ const CompanyProfileForm = () => {
                 setInputData({ ...inputData, Description: e.target.value })
               }
               placeholder="Description"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            ></input>
+          </div>
+          <div className="relative z-0 w-full mb-5 group">
+            <label
+              htmlFor="About"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
+              About
+            </label>
+            <input
+              id="About"
+              type="text"
+              required
+              onChange={(e) =>
+                setInputData({ ...inputData, About: e.target.value })
+              }
+              placeholder="About"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            ></input>
+          </div>
+          <div className="relative z-0 w-full mb-5 group">
+            <label
+              htmlFor="Services"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Services
+            </label>
+            <input
+              id="Services"
+              type="text"
+              required
+              onChange={(e) =>
+                setInputData({ ...inputData, Services: e.target.value })
+              }
+              placeholder="Services"
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             ></input>
           </div>

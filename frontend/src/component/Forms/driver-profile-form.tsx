@@ -7,6 +7,9 @@ const DriverProfileForm = () => {
     DateOfBirth: "",
     SexId: "",
     MaritalId: "",
+    About: "",
+    Education: "",
+    Skill: "",
   });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,6 +18,9 @@ const DriverProfileForm = () => {
     formData.append("dateOfBirth", inputData.DateOfBirth);
     formData.append("sexId", inputData.SexId);
     formData.append("maritalId", inputData.MaritalId);
+    formData.append("about", inputData.About);
+    formData.append("education", inputData.Education);
+    formData.append("skill", inputData.Skill);
     formData.append("image", file);
     axios
       .post(`${BackendUrl}/profileDriver`, formData, {
@@ -101,6 +107,60 @@ const DriverProfileForm = () => {
               <option value="1">Single</option>
               <option value="2">Married</option>
             </select>
+          </div>
+        </div>
+        <div className="relative z-0 w-full mb-5 group">
+          <label
+            htmlFor="About"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            About
+          </label>
+          <input
+            id="About"
+            type="text"
+            required
+            onChange={(e) =>
+              setInputData({ ...inputData, About: e.target.value })
+            }
+            placeholder="About"
+            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          ></input>
+        </div>
+        <div className="relative z-0 w-full mb-5 group">
+          <label
+            htmlFor="About"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Education
+          </label>
+          <input
+            id="About"
+            type="text"
+            required
+            onChange={(e) =>
+              setInputData({ ...inputData, Education: e.target.value })
+            }
+            placeholder="Education"
+            className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          ></input>
+          <div className="relative z-0 w-full mb-5 group">
+            <label
+              htmlFor="About"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Skill
+            </label>
+            <input
+              id="Skill"
+              type="text"
+              required
+              onChange={(e) =>
+                setInputData({ ...inputData, Skill: e.target.value })
+              }
+              placeholder="Skill"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            ></input>
           </div>
         </div>
         <div className="grid md:grid-cols-2 md:gap-6">

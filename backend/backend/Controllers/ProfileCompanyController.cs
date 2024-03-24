@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RadioCabsBackEnd.DTOs.ProfileCompany;
 
 namespace backend.Controllers
 {
@@ -59,6 +60,13 @@ namespace backend.Controllers
         {
             var profilesToReturn = await _profileCompanycs.GetAllProfileToClinet();
             return Ok(profilesToReturn);
+        }
+        [Authorize]
+        [HttpPut("{profileId:int}")]
+        public async Task<IActionResult> UpdateProfile([FromForm] ProfileCompanyUpdateDto dto, [FromRoute] int profileId)
+        {
+            await _profileCompanycs.UpdateProfile(dto, profileId);
+            return NoContent();
         }
     }
 }

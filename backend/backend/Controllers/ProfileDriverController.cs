@@ -60,7 +60,7 @@ namespace backend.Controllers
             return Ok(profilesToReturn);
         }
         [Authorize]
-        [HttpPut]
+        [HttpPut("{profileId:int}")]
         public async Task<IActionResult> UpdateProfile([FromForm] ProfileDriverUpdateDto dto, [FromRoute] int profileId)
         {
             await _profileDriverServices.UpdateProfile(dto,profileId);

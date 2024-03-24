@@ -8,6 +8,8 @@ using backend.Services.TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using RadioCabsBackEnd.Services.Admin;
+using RadioCabsBackEnd.Services.Advertise;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -57,7 +59,8 @@ builder.Services.AddTransient<ISexServices, SexServices>();
 builder.Services.AddTransient<IMaritalServices, MaritalServices>();
 builder.Services.AddTransient<IProfileDriverServices, ProfileDriverServices>();
 builder.Services.AddTransient<IProfileCompanycs, ProfileCompanyServices>();
-
+builder.Services.AddTransient<IAdvertiseServices, AdvertiseServices>();
+builder.Services.AddTransient<IAdminServices, AdminServices>();
 
 var app = builder.Build();
 

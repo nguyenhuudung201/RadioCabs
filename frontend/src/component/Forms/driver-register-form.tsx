@@ -15,6 +15,7 @@ export default function DriverRegisterForm() {
     contactPerson: "",
     description: "",
     experience: "",
+    roleId: 2,
   });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

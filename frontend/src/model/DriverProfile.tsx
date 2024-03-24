@@ -3,6 +3,7 @@ export interface DriverProfile {
   image: string;
   name: string;
   description: string;
+  url: string;
 }
 export interface DriverProfileDetail {
   image: string;
@@ -17,5 +18,8 @@ export interface DriverProfileDetail {
   contactPerson: string;
   dateOfBirth: string;
   phoneNumber: string;
+  about: string;
+  education: string;
+  skill: string;
   experience: number;
 }

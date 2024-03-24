@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 import { FaAngleDown } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Logo from "../assect/image/Logo_careera.png";
 const Header = () => {
   const [toggle, setToggle] = useState(false);
+  const { userInfo } = useSelector((state: any) => state.auth);
   return (
     <header className="bg-white md:py-5 ">
       <nav className=" flex justify-between  items-center w-[92%]  mx-auto">
@@ -56,9 +58,9 @@ const Header = () => {
                       </Link>
                     </li>
                     <li>
-                      <a className="flex p-2 font-medium  " href="">
+                      <Link to={`/drivers`} className="flex p-2 font-medium  ">
                         Drives
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -68,9 +70,15 @@ const Header = () => {
         </div>
         <div className="flex items-center gap-6">
           <button className="bg-[#71b131]   hover:bg-[#90c754] xl:block w-32 py-2 px-5 ">
-            <Link className="text-white hover:text-white " to={`/signin`}>
-              Sign In
-            </Link>
+            {!userInfo ? (
+              <Link className="text-white hover:text-white " to={`/signin`}>
+                Sign In
+              </Link>
+            ) : (
+              <Link className="text-white hover:text-white " to={`/profile`}>
+                Profile
+              </Link>
+            )}
           </button>
         </div>
       </nav>

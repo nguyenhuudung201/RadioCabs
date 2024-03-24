@@ -11,8 +11,10 @@
         public required string Mobile { get; set; }
         public required string Fax { get; set; }
         public required string Email { get; set; }
-        public DateOnly DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public required string Image { get; set; }
+        public required string About { get; set; }
         public required string Description { get; set; }
+        public required string Services { get; set; }
     }
 }

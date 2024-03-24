@@ -1,16 +1,148 @@
 {
   "Files": [
     {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\Advertises\\Advertise_Advertise_image_1711205244135.png",
+      "PackagePath": "staticwebassets\\images\\Advertises\\Advertise_Advertise_image_1711205244135.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\Advertises\\Advertise_Advertise_image_1711208200809.png",
+      "PackagePath": "staticwebassets\\images\\Advertises\\Advertise_Advertise_image_1711208200809.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711086301586.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711086301586.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253408491.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253408491.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253414628.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253414628.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253419406.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253419406.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253425305.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253425305.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253430536.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253430536.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253438562.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253438562.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253445545.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253445545.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253451253.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253451253.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253455979.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253455979.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253460512.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253460512.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253464858.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253464858.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253466480.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253466480.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253471069.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253471069.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253475929.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253475929.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253481262.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253481262.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711253486374.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711253486374.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_company_image_1711254001763.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_company_image_1711254001763.png"
+    },
+    {
       "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_driver_image_1710681118093.png",
       "PackagePath": "staticwebassets\\images\\companies\\comapny_driver_image_1710681118093.png"
     },
     {
-      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1710640534554.jpg",
-      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1710640534554.jpg"
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\comapny_driver_image_1710919330717.png",
+      "PackagePath": "staticwebassets\\images\\companies\\comapny_driver_image_1710919330717.png"
     },
     {
-      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1710640612854.jpg",
-      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1710640612854.jpg"
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\profile_company_image_1711166464768.png",
+      "PackagePath": "staticwebassets\\images\\companies\\profile_company_image_1711166464768.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\companies\\profile_company_image_1711166605522.png",
+      "PackagePath": "staticwebassets\\images\\companies\\profile_company_image_1711166605522.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711167396613.png",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711167396613.png"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711250325038.jpg",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711250325038.jpg"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711250416824.jpg",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711250416824.jpg"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711250434256.jpg",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711250434256.jpg"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711250447767.jpg",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711250447767.jpg"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711250459185.jpg",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711250459185.jpg"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711250474161.jpg",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711250474161.jpg"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711250492972.jpg",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711250492972.jpg"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711250508680.jpg",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711250508680.jpg"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711250527394.jpg",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711250527394.jpg"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711250544524.jpg",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711250544524.jpg"
+    },
+    {
+      "Id": "E:\\Radio Cabs\\RadioCabsBackEnd\\RadioCabsBackEnd\\wwwroot\\images\\driver\\profile_driver_image_1711250564646.jpg",
+      "PackagePath": "staticwebassets\\images\\driver\\profile_driver_image_1711250564646.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.RadioCabsBackEnd.Microsoft.AspNetCore.StaticWebAssets.props",

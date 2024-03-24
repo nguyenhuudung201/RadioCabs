@@ -9,6 +9,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RadioCabsBackEnd.DTOs.Admin;
+using RadioCabsBackEnd.DTOs.ProfileCompany;
+using RadioCabsBackEnd.DTOs.ProfileDrive;
+using RadioCabsBackEnd.Entities;
 using System.Security.Claims;
 
 namespace backend.Controllers
@@ -80,7 +84,7 @@ namespace backend.Controllers
                 Fax = dtos.Fax,
                 Password = PasswordHelper.HashPassword(dtos.CompanyPassword, out salt),
                 MemberId = dtos.MemberId,
-                RoleId = 1,
+                RoleId = dtos.RoleId,
                 Salt = salt,
             };
             _radioCabsContext.Companies.Add(companyToCreate);
@@ -112,7 +116,7 @@ namespace backend.Controllers
                 Password=PasswordHelper.HashPassword(dtos.Password,out salt),
                 Mobile=dtos.Mobile,
                 Telephone=dtos.Telephone,
-                RoleId=2,
+                RoleId=dtos.RoleId,
                 Salt = salt,
             };
             _radioCabsContext.Drivers.Add(driverToCreate);
@@ -154,8 +158,93 @@ namespace backend.Controllers
         [HttpGet("comapny")]
         public async Task<IActionResult> GetCurrentCompany()
         {
-            var email = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value; // lay username tu trong jwt
-           return Ok(email);
+            var username = HttpContext.User.Identity!.Name; // lay username tu trong jwt
+            var user = await _radioCabsContext.Companies.FirstOrDefaultAsync(u => u.Email.ToUpper().Equals(username!.ToUpper()));
+            var userGetDto = new CompanyGetDto
+            { 
+                RoleId = user!.RoleId
+            };
+            return Ok(userGetDto);
+        }
+        [Authorize]
+        [HttpGet("driver")]
+        public async Task<IActionResult> GetCurrentDriver()
+        {
+            var username = HttpContext.User.Identity!.Name; // lay username tu trong jwt
+            var user = await _radioCabsContext.Drivers.FirstOrDefaultAsync(u => u.Email.ToUpper().Equals(username!.ToUpper()));
+            var driverGetDto = new DriverGetDto
+            {
+                RoleId = user!.RoleId
+            };
+            return Ok(driverGetDto);
+        }
+        [HttpPost("register/admin")]
+        public async Task<IActionResult> RegisterAdmin([FromBody] AdminCreateDtos dtos)
+        {
+            // Kiem tra modelstate
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            // Kiem tra xem username va password co trung khong
+            var admin = await _radioCabsContext.Admins.FirstOrDefaultAsync(d => d.Email.ToUpper().Equals(dtos.Email.ToUpper()));
+            // Neu bi trung, tra ve 409
+            if (admin is not null)
+                return Conflict("Email  already exists.");
+            string salt = "";
+            var adminToCreate = new Admin
+            {
+                Name=dtos.Name,
+                Email = dtos.Email,
+                
+                Password = PasswordHelper.HashPassword(dtos.Password, out salt),
+                RoleId = dtos.RoleId,
+                Salt = salt,
+            };
+            _radioCabsContext.Admins.Add(adminToCreate);
+            await _radioCabsContext.SaveChangesAsync();
+            return Accepted();
+        }
+        [HttpPost, Route("login/admin")]
+        public async Task<IActionResult> AdminLogin([FromBody] LoginDto dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+            var admin = await _radioCabsContext.Admins.FirstOrDefaultAsync(c => c.Email.ToUpper().Equals(dto.Email.ToUpper()));
+            if (admin is null)
+            {
+                return Unauthorized();
+            }
+            if (!PasswordHelper.VerifyPasswordAdmin(admin, dto.Password))
+            {
+
+                return Unauthorized();
+            }
+            var claims = new List<Claim>
+            {
+             new Claim(ClaimTypes.Name, admin.Email),
+
+            };
+            var accessToken = _tokenService.GenerateAccessToken(claims);
+            var refreshToken = _tokenService.GenerateRefreshToken();
+
+            admin.RefreshToken = refreshToken;
+            admin.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
+
+            _radioCabsContext.SaveChanges();
+
+            return Ok(new AuthenticatedResponse { Token = accessToken, RefreshToken = refreshToken });
+        }
+        [Authorize]
+        [HttpGet("admin")]
+        public async Task<IActionResult> GetCurrentAdmin()
+        {
+            var username = HttpContext.User.Identity!.Name; // lay username tu trong jwt
+            var user = await _radioCabsContext.Admins.FirstOrDefaultAsync(u => u.Email.ToUpper().Equals(username!.ToUpper()));
+            var driverGetDto = new DriverGetDto
+            {
+                RoleId = user!.RoleId
+            };
+            return Ok(driverGetDto);
         }
     }
 }
